@@ -9,20 +9,16 @@ Science for Social Scientists__ taught at the
 [Quantitative Methods in the Social Sciences](http://qmss.columbia.edu/)
 program over the Spring of 2018.
 
-It contains references, slides, code examples, and starter files for
+It contains references, slides, code, and starter files for
 data challenges. You can find the most updated version of the course 
-syllabus [here](https://github.com/marco-morales/QMSS-GR5069_Spring2018/GR5069_Spring2018.pdf) 
-as well. 
-
-Also, the [__Wiki__](https://github.com/marco-morales/QMSS-GR5069_Spring2018/wiki) on this
-repository contains additional information and resources related to
-the course's material and other relevant topics. Make sure to check it
-regularly. 
+syllabus [here](https://github.com/marco-morales/QMSS-GR5069_Spring2018/syllabus/GR5069_Spring2018.pdf) 
+as well. Make sure to check it regularly. 
 
 
 ## Overview
 
-In his now classic [Venn diagram](http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram), Drew Conway described **Data Science** as sitting at
+In his now classic [Venn diagram](http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram), 
+[Drew Conway](https://en.wikipedia.org/wiki/Drew_Conway) described **Data Science** as sitting at
 the intersection between **good hacking skills**, **math
   and statistics knowledge**, and **substantive expertise**. By
 training, social scientists possess a fluid combination of all three,
@@ -65,7 +61,7 @@ careers:
 
 * [Grolemund, Garrett and Hadley Wickham. 2016. _R for Data Science_. Boston, MA: O'Reilly Media.](http://shop.oreilly.com/product/0636920034407.do) Alternatively, you can consult the online version of the text [here](http://r4ds.had.co.nz/).
 * [Wickham, Hadley. 2014. _Advanced R_. Boca Raton, Fl: Taylor and Francis.](https://www.crcpress.com/Advanced-R/Wickham/p/book/9781466586963) Alternatively, you can consult the online version of the text [here](http://adv-r.had.co.nz/).
-* [Chang, Winston. 2013._R Graphics Cookbook_. Boston, MA: O'Reilly Media.](http://shop.oreilly.com/product/0636920023135.do) Alternatively, you can consult the onlibe version of the text [here](http://www.cookbook-r.com/Graphs/)
+* [Chang, Winston. 2013._R Graphics Cookbook_. Boston, MA: O'Reilly Media.](http://shop.oreilly.com/product/0636920023135.do) Alternatively, you can consult the online version of the text [here](http://www.cookbook-r.com/Graphs/)
 * [Wickham, Hadley. 2016._ggplot2: Elegant Graphics for Data Analysis, Second Ed_. New York, NY: Springer.](http://www.springer.com/us/book/9780387981413) You can get the code from the book [here](http://ggplot2.org/book/)
 * [Conway, Drew and John Myles White. 2012. _Machine Learning for Hackers: Case Studies and Algorithms to Get You Started_. Boston, MA: O'Reilly Media.](http://shop.oreilly.com/product/0636920018483.do)
 
@@ -74,7 +70,7 @@ careers:
 
 By the second session, make sure to have the latest versions of
 [__R__](https://www.r-project.org/), [__RStudio__](https://www.rstudio.com/), and
-[Git](https://git-scm.com/) on your computer. Also, make sure to have registered 
+[__Git__](https://git-scm.com/) on your computer. Also, make sure to have registered 
 for a [__GitHub__](https://github.com) account.
 
 
