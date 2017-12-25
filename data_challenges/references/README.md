@@ -243,7 +243,7 @@ Variable |  description
  3rd Qu.: 0.000          3rd Qu.:1.0000                       3rd Qu.:4047  
  Max.   : 1.000          Max.   :1.0000                       Max.   :5396  
  NA's   :5183                                                               
-> ```
+```
 
 
 ## Summary session information

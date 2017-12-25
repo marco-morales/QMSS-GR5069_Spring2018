@@ -2,7 +2,13 @@
 
 This part of the repository contains the starter files for your data challenge. Think of this as a stand-alone DS project to clone and use to solve your data challenges.
 
-Data challenges are to be solved as team assignments. Designate a master repository for your data challenges among team members, and use it to collaborate. To submit a data challenge, please create a report file on your master GitHub, and submit a pdf of your report to **Canvas**. 
+Data challenges are to be solved as team assignments (collabortion! collaboration! collaboration!). 
+* designate a master repository for your data challenges among team members, and 
+* use it to collaborate to solve the data challenge. 
+
+To submit a data challenge, please 
+* create a report file on your master GitHub, and 
+* submit a pdf of your report to **Canvas**. 
 
 The project structure is as follows:
 
@@ -11,7 +17,7 @@ data_challenges\
 
 | -- src 
 	| -- data 
-			| -- dataGather_ViolenceData_171220.R
+			| -- Gather_ViolenceData_171220.R
 			| -- LibraryInstaller.R
 			| -- DefineFunctions.R
 
@@ -36,14 +42,14 @@ data_challenges\
 
 A few things to note:
 
-* `src/data/dataGather_ViolenceData_171220.R` is the main script to shape the data. It makes use of `LibraryInstaller.R` which installs libraries if you don't already have them, and `DefineFunctions.R` which calls some processing functions to the main script
+* `src/data/Gather_ViolenceData_171220.R` is the main script to shape the data. It makes use of `LibraryInstaller.R` which installs libraries if you don't already have them, and `DefineFunctions.R` which calls some processing functions to the main script
 * `references/README.md` is the data dictionary for `data/processed/AllViolenceData_171220.csv`, which is your ready-to-use output file 
 * all raw data is stored in `data/raw` and external sources in `data/external`
 
 
 To do before out third class:
 
-* make sure you can run the script [`dataGather_ViolenceData_171220.R`](src/data/dataGather_ViolenceData_171220.R) and you understand what's going on
+* make sure you can run the script [`Gather_ViolenceData_171220.R`](src/data/Gather_ViolenceData_171220.R) and you understand what's going on
 * read the [data dictionary](references/README.md)
 * start exploring the dataset `AllViolenceData_171220.csv`
 * pose questions on the dataset in Slack if you have any (I'll be your sherpa on this one)
