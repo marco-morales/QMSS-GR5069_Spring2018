@@ -6,7 +6,7 @@ Data Science remains a very nebulous concept with a very fluid definition, perha
 * this
 [piece](http://courses.csail.mit.edu/18.337/2015/docs/50YearsDataScience.pdf) by David Donoho discussing data science (and statistics). An incredibly relevant piece for Social Scientists to read as they head into the world of
 Data Science. 
-* take also a few minutes to read Drew Conway's [original post](http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram) on the Data Science Venn Diagram.
+* take also a few minutes to read Drew Conway's [original post](http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram) on the Data Science Venn Diagram ...and since this is week 2, keep going on this [compilation](https://www.kdnuggets.com/2016/10/battle-data-science-venn-diagrams.html) of iterations on the same idea. 
 
 This week we will also be discussing a few topics related to best practices in contemporary data science. A few additional resources below.
 
@@ -21,7 +21,8 @@ As [Cookiecutter](http://drivendata.github.io/cookiecutter-data-science/#be-cons
 
 
 ### R
-If you are taking this course, you are probably not new to R. But if you need a handy refresher, make sure to revisit some of these resources:
+
+If you are taking this course, you are not new to R. But if you need a handy refresher, make sure to revisit some of these resources:
 
 * [An Introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)
 * [R Code School](http://tryr.codeschool.com/)
