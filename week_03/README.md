@@ -7,7 +7,7 @@ Data Science projects must fulfill three aims, to be useful for collaboration:
 * **portability**
 * **scalability**
 
-This week we'll discuss some principles - and tricks - that take your projects to that level.
+This week we'll discuss some principles - and tricks - that take your projects to that level. To prepare the discussion, you may want to skim through some of the links below to get a sense of how people have implemented DS projects and the structures they have though behind their proposed structures.
 
 ### Creating DS project structures
 
