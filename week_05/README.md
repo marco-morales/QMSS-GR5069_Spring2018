@@ -17,7 +17,7 @@ These three readings will provide breadth and depth for this week:
 a very comprehensive treatment of _graphical perceptions_ as the
 foundation to effective graphs. 
 
-* a couple of chapters(5 - The Eye and the Visual Brain and 6 - Visualizing for the Mind)
+* a couple of chapters (5 - The Eye and the Visual Brain and 6 - Visualizing for the Mind)
 from [Alberto Cairo's](http://albertocairo.com/)'s 
 [The Functional Art](https://www.amazon.com/Functional-Art-introduction-information-visualization/dp/0321834739/ref=sr_1_3?s=books&ie=UTF8&qid=1486761450&sr=1-3&keywords=alberto+cairo) to
   understand the cognitive aspect of visualizations as means to
@@ -28,15 +28,19 @@ from [Alberto Cairo's](http://albertocairo.com/)'s
 Academics are not foreign to the benefits of summarizing information
 through graphs.
 
-Nemi and Gelman also have a very nice
+* Nemi and Gelman also have a very nice
 [piece](http://www.stat.columbia.edu/~gelman/research/published/Niemi_GraphicsInformation.pdf)
 (almost a cheatsheet) illustrating some very simple principles for
-creating effective graphs. Gelman, Passarica and Dodhia provide an early
+creating effective graphs. 
+* Gelman, Passarica and Dodhia provide an early
 [discussion](http://www.stat.columbia.edu/~gelman/research/published/dodhia.pdf)
 on the benefits of transforming tables into graphs, including some
-very useful illustrations of their point. Kastellac and Leoni have also a
+very useful illustrations of their point. 
+* Kastellac and Leoni have also a
 [paper](http://jonathanrenshon.com/Teaching/NPS/ResearchDesign/Using%20Graphs%20Instead%20of%20Tables.pdf)
 making a similar case with additional examples.
+* Weiner's [piece](http://www.jstor.org/stable/2683253) exhibits "12 principles" for bad data visualization. 
+
 
 
 ## Book-length treatments
@@ -62,6 +66,7 @@ ideas.
   Art](https://www.amazon.com/Functional-Art-introduction-information-visualization/dp/0321834739/ref=sr_1_3?s=books&ie=UTF8&qid=1486761450&sr=1-3&keywords=alberto+cairo)
   or [The Truthful
   Art](https://www.amazon.com/Truthful-Art-Data-Charts-Communication/dp/0321934075/ref=sr_1_1?s=books&ie=UTF8&qid=1486761450&sr=1-1&keywords=alberto+cairo)
+* Healy's [Data Visualization: a Practical Introduction](http://socviz.co)
 
 # Additional resources
 
@@ -96,5 +101,5 @@ principles for graphing
   [Calling Bullshit course](http://callingbullshit.org/tools/tools_misleading_axes.html)
   on graph axes
 * many good pieces of advice from Karl Broman; check his
-  [talks Github](github.com/kbroman/Talk_Graphs) regularly for good
+  [site](https://www.biostat.wisc.edu/~kbroman/topten_worstgraphs/) regularly for good
   graph advice
