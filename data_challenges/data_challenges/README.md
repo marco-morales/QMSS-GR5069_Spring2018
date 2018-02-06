@@ -9,6 +9,8 @@ At the end of January 2017, the [Drug Policy Program (PPD)](http://www.politicad
 
 > 86.1% of dead civilians who presumably participated in confrontations with federal armed forces were killed in events of "perfect lethality" where there were only dead and no wounded. [...] Mexico has the terrible situation of having lethality indices of 2.6. The lethality index of the Federal Police is 2.6 dead for every wounded, the Navy's reaches 17.3 dead for every wounded, and the Army's is 9.1 dead for every wounded. 
 
+The lethality index is defined as the ratio of dead over wounded per event. 
+
 
 With this new dataset, please address the following: 
 
