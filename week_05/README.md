@@ -4,7 +4,7 @@
 
 These three readings will provide breadth and depth for this week:
 
-* a very illuminating discussion prompted by a [piece](rhttps://www.jstor.org/stable/23113375?seq=1#page_scan_tab_contents) by
+* a very illuminating discussion prompted by a [piece](https://www.jstor.org/stable/23113375?seq=1#page_scan_tab_contents) by
   [Andrew Gelman](http://www.stat.columbia.edu/~gelman/) on the
   virtues of graphs relative to tables. When you read it, remember
   that it was written as
@@ -39,8 +39,6 @@ very useful illustrations of their point.
 * Kastellac and Leoni have also a
 [paper](http://jonathanrenshon.com/Teaching/NPS/ResearchDesign/Using%20Graphs%20Instead%20of%20Tables.pdf)
 making a similar case with additional examples.
-* Weiner's [piece](http://www.jstor.org/stable/2683253) exhibits "12 principles" for bad data visualization. 
-
 
 
 ## Book-length treatments
@@ -103,3 +101,5 @@ principles for graphing
 * many good pieces of advice from Karl Broman; check his
   [site](https://www.biostat.wisc.edu/~kbroman/topten_worstgraphs/) regularly for good
   graph advice
+* Weiner's [piece](http://www.jstor.org/stable/2683253) compiles "12 principles" for bad data visualization
+
