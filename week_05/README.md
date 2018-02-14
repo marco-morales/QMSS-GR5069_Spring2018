@@ -18,7 +18,7 @@ a very comprehensive treatment of _graphical perceptions_ as the
 foundation to effective graphs. 
 
 * a couple of chapters (5 - The Eye and the Visual Brain and 6 - Visualizing for the Mind)
-from [Alberto Cairo's](http://albertocairo.com/)'s 
+from [Alberto Cairo](http://albertocairo.com/)'s 
 [The Functional Art](https://www.amazon.com/Functional-Art-introduction-information-visualization/dp/0321834739/ref=sr_1_3?s=books&ie=UTF8&qid=1486761450&sr=1-3&keywords=alberto+cairo) to
   understand the cognitive aspect of visualizations as means to
   enhance their effectiveness in communicating information
