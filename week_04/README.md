@@ -11,4 +11,4 @@ intuitive at first, so you may want to start with some of these resources, and i
 * [Git Pro book](https://git-scm.com/book/en/v2) if you're getting really serious about Git
 
 It's also quite simple to integrate GitHub with [RStudio](https://www.rstudio.com/), you can read more in [Chapter 13](http://r-pkgs.had.co.nz/git.html)
-of _R Packages_.
+of _R Packages_. Check out also - from the folks at [RStudio](https://www.rstudio.com/) - [Happy Git and GitHub for the useR](http://happygitwithr.com/).
