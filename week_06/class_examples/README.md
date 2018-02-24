@@ -98,7 +98,7 @@ perf_lg <- performance(pred,"tpr","fpr")
 plot(perf_lg)
 ```
 
-![](week_06_class_examples_files/figure-markdown_github/unnamed-chunk-5-1.png)
+![](figures/unnamed-chunk-5-1.png)
 
 ``` r
 ##Area under ROC curve
@@ -204,7 +204,7 @@ plot(perf_rf, col='blue',lty=2,add=TRUE)
 legend(0.6,0.6,c('Logistic','RF'),col=c('red','blue'),lwd=3)
 ```
 
-![](week_06_class_examples_files/figure-markdown_github/unnamed-chunk-10-1.png)
+![](figures/unnamed-chunk-10-1.png)
 
 ``` r
 ##Area under ROC curve
@@ -234,7 +234,7 @@ ggplot(AllData, aes(Date, total_people_dead)) +
   ylab("Total people dead") + xlab("")
 ```
 
-![](week_06_class_examples_files/figure-markdown_github/unnamed-chunk-12-1.png)
+![](figures/unnamed-chunk-12-1.png)
 
 We can start by smoothing the data by including weekly and monthly moving averages;
 
@@ -253,7 +253,7 @@ ggplot() +
   ylab('Total People Dead')
 ```
 
-![](week_06_class_examples_files/figure-markdown_github/unnamed-chunk-13-1.png)
+![](figures/unnamed-chunk-13-1.png)
 
 Here we use the smoothed series of weekly moving average. Let's check for stationary;
 
@@ -278,20 +278,20 @@ The augmented Dickey Fuller test rejects the null hypothesis of non-stationary.
 Acf(totald_ma)
 ```
 
-![](week_06_class_examples_files/figure-markdown_github/unnamed-chunk-15-1.png)
+![](figures/unnamed-chunk-15-1.png)
 
 ``` r
 Pacf(totald_ma)
 ```
 
-![](week_06_class_examples_files/figure-markdown_github/unnamed-chunk-15-2.png)
+![](figures/unnamed-chunk-15-2.png)
 
 ``` r
 mod <- auto.arima(totald_ma, seasonal=FALSE)
 tsdisplay(residuals(mod), lag.max=15, main='(1,1,0) Model Residuals')
 ```
 
-![](week_06_class_examples_files/figure-markdown_github/unnamed-chunk-16-1.png)
+![](figures/unnamed-chunk-16-1.png)
 
 There is a pattern in ACF/PACF graphs repeating at lag 7. We should redefine our arima model.
 
@@ -300,7 +300,7 @@ mod2 <- arima(totald_ma, order=c(1,1,7))
 tsdisplay(residuals(mod2), lag.max=15, main='(1,1,7) Model2 Residuals')
 ```
 
-![](week_06_class_examples_files/figure-markdown_github/unnamed-chunk-17-1.png)
+![](figures/unnamed-chunk-17-1.png)
 
 This is better. Let's do forecasting with our model.
 
@@ -309,6 +309,6 @@ fcast <- forecast(mod2, h=730) # forecasting 2 years
 plot(fcast)
 ```
 
-![](week_06_class_examples_files/figure-markdown_github/unnamed-chunk-18-1.png)
+![](figures/unnamed-chunk-18-1.png)
 
 The blue line displays the fit provided by the model. It seems naive, because the blue line quickly gets closer to a straight line and does not carry out the trend of the past. There are various ways to improve this model such as removing seasonality, checking trend and historic events or adding predictors and fitting and ARMAX model.
