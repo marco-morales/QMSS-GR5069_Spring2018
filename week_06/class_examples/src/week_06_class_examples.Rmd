@@ -1,0 +1,197 @@
+---
+title: "An Analysis of Violence Data"
+output: github_document
+
+---
+```{r, include = FALSE}
+# makes sure all needed packages are installed
+if (!require("tidyverse")) install.packages("tidyverse")
+if (!require("ROCR")) install.packages("ROCR")
+if (!require("randomForest")) install.packages("randomForest")
+if (!require("ggplot2")) install.packages("ggplot2")
+if (!require("forecast")) install.packages("forecast")
+if (!require("tseries")) install.packages("tseries")
+
+#load all libraries
+library(tidyverse)
+library(ROCR)
+library(randomForest)
+library(ggplot2)
+library(forecast)
+library(tseries)
+
+# load data
+AllData <- read.csv("~/Dropbox/GR5069_Spring2018/GR5069_Spring2018/data_challenges/data/processed/AllViolenceData_171220.csv")
+#AllData <- read_csv("./data/processed/AllViolenceData_171220.csv")
+```
+The goal here is to predict "perfect lethality" based on some features in our data set such as; number of people dead and wounded in an event, what type of guns seized and who participated to the event. The covariates are: "total_people_dead", "total_people_wounded", "long_guns_seized", "small_arms_seized", "cartridge_sezied", "clips_seized", "afi", "army", "navy", "federal_police", "state_police"
+Outcome: "perfect_lethality"
+
+First, we split our data into a training (60%) and testing (40%) data sets so we can assess how well our model performs in an out-of-sample data set.
+
+```{r}
+set.seed(0) #for replicability, always set a seed!
+n <- dim(AllData)[1]
+ntest <- round(n*0.4) #size of testing data
+tindex <- sample(n,ntest) # indices of testing samples
+data_test<- AllData[tindex,]
+data_train <- AllData[-tindex,]
+data_train$perfect_lethality <- as.factor(data_train$perfect_lethality)
+data_test$perfect_lethality <- as.factor(data_test$perfect_lethality)
+```
+
+##**Logistic Regression**
+
+Fit a model on the training data to predict perfect_lethality
+```{r}
+model_lg = glm(formula = perfect_lethality ~ total_people_dead + 
+                 total_people_wounded + long_guns_seized+ small_arms_seized +
+                 cartridge_sezied+ clips_seized+ afi+ army + navy + 
+                 federal_police + state_police, 
+               family = binomial(link = "logit"), 
+               data = data_train)
+summary(model_lg)
+```
+The estimates from logistic regression define the relationship between the predictor and response variable on a log-odds scale. So here, the model indicates that for every one unit increase in long guns seized in an event, the log-odds of having perfect lethality increases by 0.0228. Log-odds are not very informative that's why we take exponential to obtain odds ratio. 
+
+```{r}
+exp(coef(model_lg))
+```
+So every one unit increase in long_gun_seized, the odds of having perfect lethality increases by a factor of 1.023.
+
+Let's evaluate our model on a new dataset. 
+```{r}
+pred_probs<-predict(model_lg, newdata = data_test, type = "response") # probabilities 
+pred <-prediction(pred_probs, data_test$perfect_lethality) # fpr, tpr, and labels
+perf_lg <- performance(pred,"tpr","fpr")
+plot(perf_lg)
+```
+
+```{r}
+##Area under ROC curve
+performance(pred, "auc")@y.values[[1]]  #LogReg
+```
+We have 86.09% testing accuracy for logistic regression model.
+```{r}
+prob_tr<-predict(model_lg, newdata = data_train, type = "response") #this gives us probabilities
+pred_tr <-prediction(prob_tr, data_train$perfect_lethality)
+performance(pred_tr, "auc")@y.values[[1]]
+```
+Note that our model has a higher **training** accuracy than **test** accuracy. Even though the difference is small, this might be due to **overfitting**. 
+
+It is also important to note that this result is obtained based on the manual training and test split that we performed above. To get more precise score we need to run some kind of cross-validation. 
+
+**10 Fold Cross-Validation**
+```{r}
+fit <- glm(formula = perfect_lethality ~ total_people_dead+ 
+             total_people_wounded + long_guns_seized+ 
+             small_arms_seized+ cartridge_sezied+ 
+             clips_seized+ afi+ army+ navy+ 
+             federal_police+ state_police, 
+           family = binomial(link = "logit"),
+           data = AllData)
+boot::cv.glm(AllData, fit, K=10)$delta[1]
+```
+
+The cross validation estimate of prediction error is 0.1199. Thus, we obtained a better accuracy with 10-fold cross validation. 
+
+
+
+Can we get better prediction accuracy? Let's improve our model. 
+
+##**Random Forest**
+
+We can try a different classifier, and apply it using the exact same variables as in the previous specificiation.
+
+```{r}
+model_rf = randomForest(perfect_lethality ~ total_people_dead + 
+                          total_people_wounded + long_guns_seized + 
+                          small_arms_seized + cartridge_sezied + 
+                          clips_seized + afi + army + navy + 
+                          federal_police + state_police , 
+                        data = data_train, 
+                        importance=TRUE, 
+                        proximity=TRUE)
+print(model_rf)
+```
+
+```{r}
+pred_probs_rf <-predict(model_rf, data_test, type='prob' )[,2]
+pred_rf<-prediction(pred_probs_rf, data_test$perfect_lethality)
+perf_rf <- performance(pred_rf,"tpr","fpr")
+
+#plotting logistic regression vs random forest
+plot(perf_lg,col='red',lty=1, main='ROC Logistic vs RF')
+plot(perf_rf, col='blue',lty=2,add=TRUE)
+legend(0.6,0.6,c('Logistic','RF'),col=c('red','blue'),lwd=3)
+```
+
+```{r}
+##Area under ROC curve
+performance(pred_rf,"auc")@y.values[[1]]  #Random Forest
+performance(pred, "auc")@y.values[[1]]  #LogReg
+```
+Our **random forest** performs better than the **logistic regression** model, per the comparison in the test data. 
+
+
+## **A look into Time Series Analysis**
+
+This is clearly a data set with an inherent **time dimension**, which we could also explicitly use to generate predictions. In this case, we would like to see the how "total number of dead" changes over **time** and predict future values based on previously observed ones (forecasting). 
+
+```{r}
+AllData$Date = as.Date(AllData$date)
+ggplot(AllData, aes(Date, total_people_dead)) +
+       geom_line() + 
+  scale_x_date('month') + 
+  ylab("Total people dead") + xlab("")
+```
+
+We can start by smoothing the data by including weekly and monthly moving averages; 
+```{r}
+AllData$totaldead_ma = ma(AllData$total_people_dead, order=7) #Weekly
+AllData$totaldead_ma30 = ma(AllData$total_people_dead, order=30) #Monthly
+
+ggplot() + 
+  geom_line(data = AllData, 
+            aes(x = Date, y = total_people_dead, colour = "Daily Counts")) +
+  geom_line(data = AllData, 
+            aes(x = Date, y = totaldead_ma,   colour = "Weekly Moving Average"))+  
+  geom_line(data = AllData, 
+            aes(x = Date, y = totaldead_ma30, colour = "Monthly Moving Average"))+
+  theme(legend.title = element_blank(), legend.position="bottom") + 
+  ylab('Total People Dead')
+```
+
+Here we use the smoothed series of weekly moving average. Let's check for stationary; 
+
+```{r}
+totald_ma = ts(na.omit(AllData$totaldead_ma), frequency=30)
+adf.test(totald_ma, alternative = "stationary")
+```
+The augmented Dickey Fuller test rejects the null hypothesis of non-stationary. 
+
+```{r}
+Acf(totald_ma)
+Pacf(totald_ma)
+```
+
+```{r}
+mod <- auto.arima(totald_ma, seasonal=FALSE)
+tsdisplay(residuals(mod), lag.max=15, main='(1,1,0) Model Residuals')
+```
+
+There is a pattern in ACF/PACF graphs repeating at lag 7. We should redefine our arima model. 
+
+```{r}
+mod2 <- arima(totald_ma, order=c(1,1,7))
+tsdisplay(residuals(mod2), lag.max=15, main='(1,1,7) Model2 Residuals')
+```
+
+This is better. Let's do forecasting with our model. 
+
+```{r}
+fcast <- forecast(mod2, h=730) # forecasting 2 years
+plot(fcast)
+```
+
+The blue line displays the fit provided by the model. It seems naive, because the blue line quickly gets closer to a straight line and does not carry out the trend of the past. There are various ways to improve this model such as removing seasonality, checking trend and historic events or adding predictors and fitting and ARMAX model. 
