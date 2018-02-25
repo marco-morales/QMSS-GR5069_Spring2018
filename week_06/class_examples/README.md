@@ -30,8 +30,6 @@ model_lg = glm(formula = perfect_lethality ~ total_people_dead +
                data = data_train)
 ```
 
-    ## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
-
 ``` r
 summary(model_lg)
 ```
@@ -138,24 +136,6 @@ fit <- glm(formula = perfect_lethality ~ total_people_dead+
 ``` r
 boot::cv.glm(AllData, fit, K=10)$delta[1]
 ```
-
-    ## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
-
-    ## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
-
-    ## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
-
-    ## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
-
-    ## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
-
-    ## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
-
-    ## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
-
-    ## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
-
-    ## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
 
     ## [1] 0.1199436
 
