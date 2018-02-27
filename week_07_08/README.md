@@ -16,4 +16,4 @@ especially Appendices A and C. We will be working with matrices
 when computing and graphing interactions, so you'll be much better
 off having a quck brush up.
 
-Also, you might want to go back to [ESL II](https://statweb.stanford.edu/~tibs/ElemStatLearn/) to get a quick refresher on random forests, and related methods. 
+Also, you might want to go back to [ESL II](https://web.stanford.edu/~hastie/Papers/ESLII.pdf) to get a quick refresher on random forests, and related methods. 
