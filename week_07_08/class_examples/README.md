@@ -301,7 +301,7 @@ which.min(summary_fw$cp)
 plot(summary_fw$cp, xlab = "Number of Variables", ylab = "Cp")
 ```
 
-![](week_07_08_class_examples_UB_files/figure-markdown_github/unnamed-chunk-17-1.png)
+![](figures/unnamed-chunk-17-1.png | width=10)
 
 Best subset selection using AIC, and Forward stepwise selection using Mallows' *C*<sub>*p*</sub> resulted in the same best model with 7 variables.
 
