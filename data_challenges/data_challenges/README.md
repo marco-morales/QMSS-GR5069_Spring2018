@@ -29,17 +29,17 @@ Formulate two (2) conditional hypotheses that you seek to investigate with the d
 
 Ask two (2) questions that might help you understand better the dynamics of violence contained on our dataset. One of them should be an **inferential** question, and one of them a **predictive** one. Apply one of the algorithms we've reviewed on each question and share your insights from each analysis. [50 pts]  Remember: a non-finding is also a finding! It tells you whether a question is worth pursuing further or not.
 
-    * write each one of your questions explicitly, and not the approach (inferential or predictive) that you'll apply
-	* perform the necessary transformations in your data - if any are needed, and explain why you did that
-	* show the output from your analysis in a consumable form
-	* be explicit about the limitations of your analysis. Are they due to estimation or to the data itself?
-	* did you find something interesting? what is that? does your finding suggest this question is worth pursuing further? why or why not?
-	* if you did not find something interesting, explain why, and whether there is some additional information that would help in answering your question
-	* provide your code, and a single visualization per question that summarizes your finding 
-	* phrase your finding for each question in two ways: 
-		* one sentence that summarizes your insight
-		* one paragraph that reflects all nuance in your insight 
-	* make sure to also include your code 
+* write each one of your questions explicitly, and not the approach (inferential or predictive) that you'll apply
+* perform the necessary transformations in your data - if any are needed, and explain why you did that
+* show the output from your analysis in a consumable form
+* be explicit about the limitations of your analysis. Are they due to estimation or to the data itself?
+* did you find something interesting? what is that? does your finding suggest this question is worth pursuing further? why or why not?
+* if you did not find something interesting, explain why, and whether there is some additional information that would help in answering your question
+* provide your code, and a single visualization per question that summarizes your finding 
+* phrase your finding for each question in two ways: 
+	* one sentence that summarizes your insight
+	* one paragraph that reflects all nuance in your insight 
+* make sure to also include your code 
 
 **This is NOT a team assignment.** Please create a file on your **personal GitHub** repo where you answer the challenge, including links to your code, graphs. 
 
