@@ -1,6 +1,6 @@
 # Required readings
 
-These two readings will provide breadth and depth for this week:
+This reading will provide breadth and depth for this week:
 
 * a path-breaking [piece](http://www.jstor.org.ezproxy.cul.columbia.edu/stable/25791835?pq-origsite=summon&seq=1#page_scan_tab_contents)
   by [Brambor](http://thomas.brambor.com/), [Clark](https://pols.tamu.edu/about-us/faculty-directory/william-r-clark-charles-puryear-professor-of-liberal-arts/) and [Golder](http://mattgolder.com/) on interactions. It's undoubtedly
